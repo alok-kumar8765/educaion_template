@@ -1,0 +1,266 @@
+/* ------------------------------------------------------
+   GLOBAL STUDENT THEME (Light / Dark / Neon)
+---------------------------------------------------------*/
+:root {
+  --bg: #f3f6ff;
+  --text: #1a1a1a;
+  --primary: #7b5cff;
+  --secondary: #00b7ff;
+  --card: rgba(255, 255, 255, 0.7);
+  --nav: rgba(255, 255, 255, 0.5);
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #0c0c0f;
+  --text: #f5f5f5;
+  --primary: #6a00ff;
+  --secondary: #00eaff;
+  --card: rgba(20,20,20,0.6);
+  --nav: rgba(20,20,20,0.5);
+}
+
+body.neon {
+  --bg: #050014;
+  --text: #fff;
+  --primary: #ff00ff;
+  --secondary: #00ffff;
+  --card: rgba(80,0,150,0.35);
+  --nav: rgba(25,0,70,0.5);
+}
+
+/* ------------------------------------------------------
+   BASE
+---------------------------------------------------------*/
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* ------------------------------------------------------
+   NAVBAR
+---------------------------------------------------------*/
+header {
+  position: sticky;
+  top: 0;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nav);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--primary);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo svg {
+  width: 45px;
+  height: 45px;
+  fill: var(--primary);
+  filter: drop-shadow(0 0 8px var(--primary));
+}
+.logo span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile toggle */
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+}
+.menu-btn svg {
+  width: 35px;
+  height: 35px;
+  fill: var(--text);
+}
+
+/* Mobile menu */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--nav);
+  padding: 20px;
+}
+.mobile-nav a {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--primary);
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* ------------------------------------------------------
+   BUTTONS (Neon Animated SVG)
+---------------------------------------------------------*/
+.neon-btn {
+  position: relative;
+  padding: 15px 38px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.neon-btn svg rect {
+  stroke: var(--primary);
+  stroke-width: 3;
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
+  transition: 0.7s;
+  filter: drop-shadow(0 0 6px var(--primary));
+}
+
+.neon-btn:hover rect {
+  stroke-dashoffset: 0;
+}
+
+.neon-btn span {
+  position: absolute;
+  left: 35px;
+  top: 15px;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------
+   AUTH PAGES
+---------------------------------------------------------*/
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  width: 380px;
+  padding: 35px;
+  background: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.auth-card h2 {
+  margin-top: 0;
+  text-align: center;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 30px;
+}
+
+.auth-card p {
+  text-align: center;
+  opacity: 0.7;
+}
+
+.input-group {
+  margin-top: 15px;
+}
+.input-group label {
+  font-weight: 600;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  background: rgba(255,255,255,0.5);
+  font-size: 15px;
+}
+
+.btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 0 12px var(--primary);
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px var(--secondary);
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 18px;
+}
+.auth-link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Theme + language */
+.theme-toggle {
+  cursor: pointer;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.lang-dropdown {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .mobile-nav.active {
+    display: flex;
+  }
+}

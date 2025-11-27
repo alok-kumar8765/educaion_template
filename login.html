@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="auth.css">
+  <script src="auth.js"></script>
+</head>
+<body class="light">
+
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <div class="theme-toggle" onclick="toggleTheme()">🌗 Theme</div>
+	<select id="langSelect" onchange="changeLang(this.value)" class="lang-dropdown">
+	  <option value="en">🌐 English</option>
+	  <option value="hi">🇮🇳 Hindi</option>
+	  <option value="es">🇪🇸 Spanish</option>
+	</select>
+
+
+	<h2 data-i18n="login_title">Welcome Back</h2>
+	<p data-i18n="login_sub">Login to continue</p>
+
+    <form id="loginForm" onsubmit="event.preventDefault(); if(validateForm('loginForm')) alert('Logged in!');">
+
+      <div class="input-group">
+        <label data-i18n="email">Email</label>
+        <input type="email" required>
+      </div>
+
+      <div class="input-group">
+        <label data-i18n="password">Password</label>
+        <input type="password" required>
+      </div>
+
+      <button class="btn" data-i18n="login_btn">Login</button>
+    </form>
+
+    <div class="auth-link"><a href="forgot.html" data-i18n="forgot">Forgot Password?</a></div>
+    <div class="auth-link"><a href="register.html" data-i18n="register">Create Account</a></div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+/* =========================
+   GLOBAL VARIABLES
+========================= */
+:root {
+  --bg: #f2f5fb;
+  --card-bg: #ffffff;
+  --text: #1a1a1a;
+  --subtext: #555;
+  --primary: #4e6bff;
+  --primary-hover: #3b55d4;
+  --border: #dce3f2;
+
+  --radius: 14px;
+  --shadow: 0 6px 22px rgba(0,0,0,0.12);
+}
+.lang-dropdown {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* DARK THEME */
+.dark {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --text: #e6e6e6;
+  --subtext: #9ba8b3;
+  --primary: #4e8cff;
+  --primary-hover: #246eff;
+  --border: #2b313a;
+}
+
+/* NEON THEME */
+.neon {
+  --bg: #000000;
+  --card-bg: #020a13;
+  --text: #00eaff;
+  --subtext: #7ae7ff;
+  --primary: #00eaff;
+  --primary-hover: #00b7cc;
+  --border: #003b47;
+}
+
+/* =========================
+   GLOBAL PAGE STYLING
+========================= */
+body {
+  background: var(--bg);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  transition: 0.3s ease-in-out;
+}
+
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-card {
+  background: var(--card-bg);
+  width: 380px;
+  padding: 35px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-card h2 {
+  margin-top: 0;
+  color: var(--text);
+  font-weight: 700;
+  text-align: center;
+}
+
+.auth-card p {
+  text-align: center;
+  color: var(--subtext);
+  margin-bottom: 25px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--subtext);
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(78,107,255,0.2);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  width: 100%;
+  padding: 13px 14px;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+}
+
+/* Link Buttons */
+.auth-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.auth-link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 13px;
+}
+
